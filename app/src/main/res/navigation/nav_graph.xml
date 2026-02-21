@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.appdev.kisanmitra.ui.home.HomeFragment"
+        android:label="Home" />
+
+    <fragment
+        android:id="@+id/diseaseFragment"
+        android:name="com.appdev.kisanmitra.ui.disease.DiseaseFragment"
+        android:label="Disease" />
+
+    <fragment
+        android:id="@+id/marketFragment"
+        android:name="com.appdev.kisanmitra.ui.market.MarketFragment"
+        android:label="Market" />
+
+    <fragment
+        android:id="@+id/communityFragment"
+        android:name="com.appdev.kisanmitra.ui.community.CommunityFragment"
+        android:label="Community" />
+
+    <fragment
+        android:id="@+id/schemesFragment"
+        android:name="com.appdev.kisanmitra.ui.schemes.SchemesFragment"
+        android:label="Schemes" />
+
+</navigation>

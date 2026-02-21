@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/diseaseFragment"
+        android:icon="@drawable/ic_disease"
+        android:title="Disease" />
+
+    <item
+        android:id="@+id/marketFragment"
+        android:icon="@drawable/ic_market"
+        android:title="Market" />
+
+    <item
+        android:id="@+id/communityFragment"
+        android:icon="@drawable/ic_groups"
+        android:title="Community" />
+
+    <item
+        android:id="@+id/schemesFragment"
+        android:icon="@drawable/ic_schemes"
+        android:title="Schemes" />
+
+</menu>
