@@ -3,7 +3,14 @@
     <style name="Base.Theme.KisanMitra" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/agri_green_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
+    <!-- Custom Active Indicator Style -->
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/agri_green_dark</item> <!-- Your custom background color (e.g., Gold) -->
+    </style>
+
 
     <style name="Theme.KisanMitra" parent="Base.Theme.KisanMitra" />
 </resources>
