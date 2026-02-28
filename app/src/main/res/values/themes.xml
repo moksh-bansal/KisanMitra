@@ -10,7 +10,11 @@
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/agri_green_dark</item> <!-- Your custom background color (e.g., Gold) -->
     </style>
-
+    <style name="ToolbarTitleStyle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/agri_light_bg</item>
+    </style>
 
     <style name="Theme.KisanMitra" parent="Base.Theme.KisanMitra" />
 </resources>
