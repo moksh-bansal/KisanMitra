@@ -42,6 +42,11 @@ class MarketplaceFragment : Fragment() {
 
         binding.btnMyProducts.setOnClickListener {
             showingMyProducts = !showingMyProducts
+            if (showingMyProducts) {
+                binding.btnMyProducts.text = "All Products"
+            } else {
+                binding.btnMyProducts.text = "My Products"
+            }
             updateList()
         }
 
