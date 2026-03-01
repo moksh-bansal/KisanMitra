@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/marketFragment"
-        android:name="com.appdev.kisanmitra.ui.market.MarketFragment"
+        android:name="com.appdev.kisanmitra.ui.marketplace.MarketplaceFragment"
         android:label="Market" />
 
     <fragment
