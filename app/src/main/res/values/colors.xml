@@ -5,4 +5,7 @@
     <color name="agri_green_dark">#1B5E20</color>
     <color name="agri_light_bg">#E8F5E9</color>
     <color name="white">#FFFFFF</color>
+    <color name="light_green">#66BB6A</color>
+    <color name="soft_background">#F4F8F4</color>
+    <color name="dark_text">#212121</color>
 </resources>

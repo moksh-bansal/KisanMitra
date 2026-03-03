@@ -61,6 +61,15 @@ dependencies {
     implementation("com.google.firebase:firebase-storage")
     // Glide for images
     implementation("com.github.bumptech.glide:glide:4.16.0")
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    // OkHttp logging (optional but useful)
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation("com.google.android.gms:play-services-location:21.2.0")
+    implementation("com.squareup.picasso:picasso:2.8")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
