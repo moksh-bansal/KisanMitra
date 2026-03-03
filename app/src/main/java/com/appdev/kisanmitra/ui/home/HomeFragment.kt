@@ -9,10 +9,8 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresPermission
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import com.appdev.kisanmitra.databinding.FragmentHomeBinding
 import com.google.android.gms.location.LocationServices
 import com.google.firebase.auth.FirebaseAuth
@@ -20,6 +18,7 @@ import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
 import com.appdev.kisanmitra.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
@@ -34,7 +33,7 @@ class HomeFragment : Fragment() {
         setupGreeting()
         setupTips()
         fetchLocationAndWeather()
-
+        setupQuickActions()
         return binding.root
     }
 
@@ -46,16 +45,15 @@ class HomeFragment : Fragment() {
 
     private fun setupQuickActions() {
 
+        val bottomNav = requireActivity()
+            .findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
         binding.btnMarketplace.setOnClickListener {
-            requireActivity()
-                .findNavController(R.id.nav_host_fragment)
-                .navigate(R.id.marketFragment)
+            bottomNav.selectedItemId = R.id.marketFragment
         }
 
         binding.btnDisease.setOnClickListener {
-            requireActivity()
-                .findNavController(R.id.nav_host_fragment)
-                .navigate(R.id.diseaseFragment)
+            bottomNav.selectedItemId = R.id.diseaseFragment
         }
     }
 
@@ -156,10 +154,11 @@ class HomeFragment : Fragment() {
     private fun setupTips() {
 
         val tips = listOf(
-            "Water crops early morning 🌅",
-            "Use organic compost 🌿",
-            "Rotate crops for better yield 🌾",
-            "Test soil health regularly 🧪"
+            "Check soil moisture before irrigation 💧",
+            "Avoid over-fertilization to protect crops 🌱",
+            "Rotate crops to improve soil nutrients 🌾",
+            "Monitor pests weekly to prevent outbreaks 🐛",
+            "Use drip irrigation to save water 🚿"
         )
 
         val adapter = TipsAdapter(tips)

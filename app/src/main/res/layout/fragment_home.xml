@@ -111,33 +111,41 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btnMarketplace"
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="130dp"
                 android:layout_columnWeight="1"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="6dp">
+                android:layout_margin="8dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="Marketplace 🛒"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/agri_green"/>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btnDisease"
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="130dp"
                 android:layout_columnWeight="1"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="6dp">
+                android:layout_margin="8dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="Crop Disease 🌾"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/agri_green"/>
             </com.google.android.material.card.MaterialCardView>
 
         </GridLayout>
