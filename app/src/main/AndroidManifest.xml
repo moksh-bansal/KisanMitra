@@ -1,39 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Internet -->
     <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Location -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!-- Camera + Gallery -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.KisanMitra">
-        <activity
-            android:name=".ui.marketplace.AddEditProductActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+        android:theme="@style/Theme.KisanMitra"
+        android:usesCleartextTraffic="true">
+
+        <!-- Splash Screen (Launcher Activity) -->
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
-        <activity android:name=".ui.auth.AuthActivity" />
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="false"/>
+
+        <!-- Auth -->
+        <activity
+            android:name=".ui.auth.AuthActivity"
+            android:exported="false"/>
+
+        <!-- Marketplace -->
+        <activity
+            android:name=".ui.marketplace.AddEditProductActivity"
+            android:exported="false"/>
+
+        <!-- Disease Result -->
+        <activity
+            android:name=".ui.disease.DiseaseResultActivity"
+            android:exported="false"/>
+
     </application>
 
 </manifest>
