@@ -9,8 +9,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import com.appdev.kisanmitra.databinding.FragmentDiseaseBinding
 import com.appdev.kisanmitra.ml.PlantDiseaseClassifier
-import com.appdev.kisanmitra.data.model.DiseaseLabels
-import com.appdev.kisanmitra.data.model.DiseaseTreatment
+import com.appdev.kisanmitra.data.model.DiseaseTreatment.getTreatment
 
 class DiseaseFragment : Fragment() {
 
@@ -41,27 +40,42 @@ class DiseaseFragment : Fragment() {
             startActivityForResult(intent,2)
         }
 
+//        binding.btnAnalyze.setOnClickListener {
+//
+//            selectedBitmap?.let {
+//
+//                val result = classifier.predict(it)
+//
+//                val index = result.indices.maxByOrNull { result[it] } ?: -1
+//
+//                val disease = DiseaseLabels.labels[index]
+//
+//                val confidence = result[index] * 100
+//
+//                val treatment = DiseaseTreatment.getTreatment(disease)
+//
+//                val intent = Intent(requireContext(), DiseaseResultActivity::class.java)
+//
+//                intent.putExtra("disease",disease)
+//                intent.putExtra("confidence",confidence)
+//                intent.putExtra("treatment",treatment)
+//
+//                startActivity(intent)
+//            }
+//        }
+        binding.resultCard.visibility = View.GONE
+
         binding.btnAnalyze.setOnClickListener {
 
             selectedBitmap?.let {
 
-                val result = classifier.predict(it)
+                val result = classifier.classify(it)
 
-                val index = result.indices.maxByOrNull { result[it] } ?: -1
+                binding.tvDisease.text = "Disease: ${result.first}"
+                binding.tvConfidence.text = "Confidence: ${result.second}%"
+                binding.tvTreatment.text = getTreatment(result.first)
 
-                val disease = DiseaseLabels.labels[index]
-
-                val confidence = result[index] * 100
-
-                val treatment = DiseaseTreatment.getTreatment(disease)
-
-                val intent = Intent(requireContext(), DiseaseResultActivity::class.java)
-
-                intent.putExtra("disease",disease)
-                intent.putExtra("confidence",confidence)
-                intent.putExtra("treatment",treatment)
-
-                startActivity(intent)
+                binding.resultCard.visibility = View.VISIBLE
             }
         }
 

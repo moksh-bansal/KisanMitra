@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import org.tensorflow.lite.Interpreter
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
+import com.appdev.kisanmitra.data.model.DiseaseLabels.labels
 
 class PlantDiseaseClassifier(context: Context) {
 
@@ -21,28 +22,41 @@ class PlantDiseaseClassifier(context: Context) {
         interpreter = Interpreter(buffer)
     }
 
-    fun predict(bitmap: Bitmap): FloatArray {
+    fun classify(bitmap: Bitmap): Pair<String, Float> {
 
-        val resized = Bitmap.createScaledBitmap(bitmap,128,128,true)
+        val resized = Bitmap.createScaledBitmap(bitmap, 128, 128, true)
 
-        val input = ByteBuffer.allocateDirect(4*128*128*3)
+        val input = ByteBuffer.allocateDirect(4 * 128 * 128 * 3)
         input.order(ByteOrder.nativeOrder())
 
-        for(y in 0 until 128){
-            for(x in 0 until 128){
+        for (y in 0 until 128) {
+            for (x in 0 until 128) {
 
-                val pixel = resized.getPixel(x,y)
+                val pixel = resized.getPixel(x, y)
 
-                input.putFloat(((pixel shr 16) and 0xFF).toFloat())
-                input.putFloat(((pixel shr 8) and 0xFF).toFloat())
+                input.putFloat((pixel shr 16 and 0xFF).toFloat())
+                input.putFloat((pixel shr 8 and 0xFF).toFloat())
                 input.putFloat((pixel and 0xFF).toFloat())
             }
         }
 
-        val output = Array(1){FloatArray(38)}
+        val output = Array(1) { FloatArray(labels.size) }
 
-        interpreter.run(input,output)
+        input.rewind()
+        interpreter.run(input, output)
 
-        return output[0]
+        var maxIndex = 0
+        var maxConfidence = 0f
+
+        for (i in output[0].indices) {
+            if (output[0][i] > maxConfidence) {
+                maxConfidence = output[0][i]
+                maxIndex = i
+            }
+        }
+
+        val diseaseName = labels[maxIndex]
+
+        return Pair(diseaseName, maxConfidence * 100)
     }
 }

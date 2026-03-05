@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/soft_background">
+    android:background="@color/agri_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,7 +12,8 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Heading -->
+        <!-- Title -->
+
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
@@ -20,10 +21,11 @@
             android:text="Crop Disease Detection"
             android:textSize="26sp"
             android:textStyle="bold"
-            android:textColor="@color/agri_green"
-            android:layout_marginBottom="20dp" />
+            android:textColor="@color/agri_dark_green"
+            android:layout_marginBottom="20dp"/>
 
-        <!-- Camera + Upload Buttons -->
+        <!-- Camera + Upload -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,6 +38,8 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Camera"
+                android:backgroundTint="@color/agri_green"
+                android:textColor="@android:color/white"
                 android:layout_marginEnd="8dp"/>
 
             <Button
@@ -44,43 +48,49 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Upload"
+                android:backgroundTint="@color/agri_green"
+                android:textColor="@android:color/white"
                 android:layout_marginStart="8dp"/>
 
         </LinearLayout>
 
         <!-- Image Preview -->
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="220dp"
             app:cardCornerRadius="16dp"
-            app:cardElevation="6dp"
+            app:cardElevation="8dp"
             android:layout_marginBottom="20dp">
 
             <ImageView
                 android:id="@+id/imagePreview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@android:color/darker_gray"/>
+                android:scaleType="centerCrop"/>
 
         </androidx.cardview.widget.CardView>
 
         <!-- Analyze Button -->
+
         <Button
             android:id="@+id/btnAnalyze"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Analyze Disease"
+            android:backgroundTint="@color/agri_dark_green"
+            android:textColor="@android:color/white"
             android:layout_marginBottom="20dp"/>
 
         <!-- Result Card -->
+
         <androidx.cardview.widget.CardView
             android:id="@+id/resultCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:cardCornerRadius="16dp"
-            app:cardElevation="6dp"
-            android:padding="16dp">
+            android:backgroundTint="@color/agri_light_green">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,26 +102,25 @@
                     android:id="@+id/tvDisease"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Disease: -"
+                    android:text="Disease"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textColor="@color/agri_green"
-                    android:layout_marginBottom="10dp"/>
+                    android:textColor="@color/agri_dark_green"/>
 
                 <TextView
                     android:id="@+id/tvConfidence"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Confidence: -"
+                    android:text="Confidence"
                     android:textSize="18sp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginTop="6dp"/>
 
                 <TextView
                     android:id="@+id/tvTreatment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Treatment Suggestions"
-                    android:textSize="16sp"/>
+                    android:text="Treatment"
+                    android:layout_marginTop="10dp"/>
 
             </LinearLayout>
 

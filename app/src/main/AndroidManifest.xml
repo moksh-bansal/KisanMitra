@@ -55,10 +55,10 @@
             android:name=".ui.marketplace.AddEditProductActivity"
             android:exported="false"/>
 
-        <!-- Disease Result -->
-        <activity
-            android:name=".ui.disease.DiseaseResultActivity"
-            android:exported="false"/>
+<!--        &lt;!&ndash; Disease Result &ndash;&gt;-->
+<!--        <activity-->
+<!--            android:name=".ui.disease.DiseaseResultActivity"-->
+<!--            android:exported="false"/>-->
 
     </application>
 
