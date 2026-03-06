@@ -29,6 +29,21 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding.btnRefreshWeather.setOnClickListener {
+
+            // Rotate animation
+            binding.btnRefreshWeather.animate()
+                .rotationBy(360f)
+                .setDuration(600)
+                .start()
+
+            // show loading state
+            binding.tvTemperature.text = "-- °C"
+            binding.tvWeatherDesc.text = "Refreshing..."
+
+            // call weather API again
+            fetchLocationAndWeather()
+        }
 
         setupGreeting()
         setupTips()

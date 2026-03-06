@@ -37,42 +37,61 @@
             android:id="@+id/weatherCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="8dp"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/agri_green_dark"
+            app:strokeWidth="0dp">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="20dp">
 
+                <!-- Reload Button -->
+                <ImageView
+                    android:id="@+id/btnRefreshWeather"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_refresh"
+                    app:tint="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"/>
+
+                <!-- Location -->
                 <TextView
                     android:id="@+id/tvLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fetching location..."
-                    android:textColor="@android:color/white"
+                    android:text="Loading..."
+                    android:textColor="@color/white"
                     android:textSize="16sp"/>
 
+                <!-- Temperature -->
                 <TextView
                     android:id="@+id/tvTemperature"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="--°C"
-                    android:textSize="48sp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"/>
+                    android:layout_below="@id/tvLocation"
+                    android:text="-- °C"
+                    android:textColor="@color/white"
+                    android:textSize="40sp"
+                    android:textStyle="bold"/>
 
+                <!-- Condition -->
                 <TextView
                     android:id="@+id/tvWeatherDesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/tvTemperature"
                     android:text="--"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"/>
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
 
-            </LinearLayout>
+            </RelativeLayout>
+
         </com.google.android.material.card.MaterialCardView>
 
         <!-- Tips Title -->
