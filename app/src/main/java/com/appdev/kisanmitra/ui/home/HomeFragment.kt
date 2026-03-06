@@ -94,6 +94,10 @@ class HomeFragment : Fragment() {
                 getWeather(location.latitude, location.longitude)
             } else {
                 binding.tvLocation.text = "Location unavailable"
+                binding.tvWeatherDesc.text = "--"
+                binding.weatherCard.setCardBackgroundColor(
+                    Color.parseColor("#2E7D32") // green
+                )
             }
         }
     }
