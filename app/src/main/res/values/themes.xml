@@ -1,20 +1,48 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.KisanMitra" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <!-- Base application theme -->
+    <style name="Base.Theme.KisanMitra" parent="Theme.Material3.Light.NoActionBar">
+
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/agri_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary -->
+        <item name="colorSecondary">@color/agri_green_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Background -->
+        <item name="android:colorBackground">@color/agri_light_bg</item>
+
+        <!-- Status bar -->
         <item name="android:statusBarColor">@color/agri_green_dark</item>
         <item name="android:windowLightStatusBar">false</item>
-    </style>
-    <!-- Custom Active Indicator Style -->
-    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@color/agri_green_dark</item> <!-- Your custom background color (e.g., Gold) -->
-    </style>
-    <style name="ToolbarTitleStyle" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">30dp</item>
-        <item name="android:textColor">@color/agri_light_bg</item>
+
+        <!-- Prevent system dark mode override -->
+        <item name="android:forceDarkAllowed">false</item>
+
     </style>
 
+
+    <!-- Bottom Navigation Active Indicator -->
+    <style name="App.Custom.Indicator"
+        parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/agri_green_dark</item>
+    </style>
+
+
+    <!-- Toolbar Title Style -->
+    <style name="ToolbarTitleStyle"
+        parent="TextAppearance.MaterialComponents.Headline6">
+
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/agri_light_bg</item>
+
+    </style>
+
+
+    <!-- App Theme -->
     <style name="Theme.KisanMitra" parent="Base.Theme.KisanMitra" />
+
 </resources>

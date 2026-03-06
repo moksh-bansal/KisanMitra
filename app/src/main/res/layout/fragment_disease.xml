@@ -113,14 +113,16 @@
                     android:layout_height="wrap_content"
                     android:text="Confidence"
                     android:textSize="18sp"
-                    android:layout_marginTop="6dp"/>
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/agri_dark_green"/>
 
                 <TextView
                     android:id="@+id/tvTreatment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Treatment"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/agri_dark_green"/>
 
             </LinearLayout>
 
