@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Internet -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-    <!-- Location -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-
-    <!-- Camera + Gallery -->
-    <uses-permission android:name="android.permission.CAMERA"/>
-<!--    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>-->
-
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Camera + Gallery -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/> -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -27,39 +20,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KisanMitra"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".ui.community.CreatePostActivity"
+            android:exported="false" />
         <!-- Splash Screen (Launcher Activity) -->
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-
-        <!-- Main Activity -->
+        </activity> <!-- Main Activity -->
         <activity
             android:name=".ui.main.MainActivity"
-            android:exported="false"/>
-
-        <!-- Auth -->
+            android:exported="false" /> <!-- Auth -->
         <activity
             android:name=".ui.auth.AuthActivity"
-            android:exported="false"/>
-
-        <!-- Marketplace -->
+            android:exported="false" /> <!-- Marketplace -->
         <activity
             android:name=".ui.marketplace.AddEditProductActivity"
-            android:exported="false"/>
-
-<!--        &lt;!&ndash; Disease Result &ndash;&gt;-->
-<!--        <activity-->
-<!--            android:name=".ui.disease.DiseaseResultActivity"-->
-<!--            android:exported="false"/>-->
-
+            android:exported="false" />
     </application>
 
 </manifest>
